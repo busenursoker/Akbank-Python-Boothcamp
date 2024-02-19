@@ -16,7 +16,7 @@ class Library:
 
         with open(self.file, "a") as f:
             f.write(book_info)
-        print("Book added to your library.")    
+        print("Yaayy! Book added to your library.")    
     
     def list_books(self):
         try:
@@ -26,7 +26,7 @@ class Library:
                     book_info = line.strip().split(',')
                     print(f"Book: {book_info[0]}, Author: {book_info[1]}")
         except FileNotFoundError:
-            print("No books found.")
+            print("Sorry, no books found :(")
 
 
     def remove_book(self):
@@ -40,7 +40,7 @@ class Library:
                         f.write(line)
             print("Book removed from your library.")
         except FileNotFoundError:
-            print("No book found.")
+            print("Sorry,no book found.")
 
         
 lib = Library()
@@ -52,7 +52,7 @@ while True:
     print("1) List Books")
     print("2) Add Book")
     print("3) Remove Book")
-    print("4) Exit\n")
+    print("Q) Quit\n")
     
     choice = input("Enter your choice please: ")
 
@@ -62,7 +62,7 @@ while True:
         lib.add_books()
     elif choice == "3":
         lib.remove_book()
-    elif choice == "4":
+    elif choice == "Q":
         print("Exiting...")
         break
     else:
